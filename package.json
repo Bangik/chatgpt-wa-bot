@@ -1,0 +1,24 @@
+{
+  "name": "chatgpt-wa-bot",
+  "version": "1.0.0",
+  "description": "WhatsApp Bot with ChatGPT",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bot"
+  ],
+  "author": "Bangik",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "openai": "^3.1.0",
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
