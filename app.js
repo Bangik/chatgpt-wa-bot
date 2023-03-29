@@ -14,7 +14,7 @@ const client = new Client({
   authStrategy: new LocalAuth(),
 });
 
-client.on('qr', (qr) => {
+client.on('qr', qr => {
   qrcode.generate(qr, { small: true });
 });
 
@@ -27,6 +27,19 @@ client.on('message', async (msg) => {
   if(text){
     if (text === 'ping') {
       msg.reply('pong. Tanya sesuatu untuk dijawab!');
+    } else if(text.includes('generate image')) {
+      msg.reply('Sedang memproses...');
+      try {
+        const response = await openai.createImage({
+          prompt: text.replace('generate image', ''),
+          n: 1,
+          size: '1024x1024',
+        });
+        msg.reply(response.data.data[0].url);
+      } catch (error) {
+        msg.reply('Terjadi kesalahan, coba lagi nanti.');
+        console.log(error);
+      }
     } else{
       msg.reply('Sedang memproses...');
       const response = await openai.createCompletion({

@@ -41,6 +41,7 @@ Dikembangkan dengan [Node JS](https://nodejs.org/en/download/)
     ```
 - Buka WhatsApp dan buka menu linked devices lalu scan barcode yang muncul pada CMD atau terminal
 - Test bot dengan cara kirim pesan "ping" pada nomor WhatsApp yang digunakan sebagai bot
+- Untuk generate image, gunakan keyword "generate image" lalu diikuti dengan pesan
 ## Contributing
 
 Silakan Fork Repository lalu lakukan update kode
